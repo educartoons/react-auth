@@ -40,3 +40,13 @@ Install the next plugin in your VS Code
 ```
 vscode-styled-components
 ```
+
+In VS Code > Preferences > Settings - Add the next
+
+```
+{
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+  },
+}
+```
