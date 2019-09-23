@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Header from '../components/Header'
 import Meta from './Meta';
-import styled, {ThemeProvider, injectGlobal} from 'styled-components';
+import styled, {ThemeProvider, createGlobalStyle} from 'styled-components';
 
 const theme = {
   red: '#FF0000',
@@ -24,6 +24,28 @@ const Inner = styled.div`
   padding: 2rem;
 `;
 
+const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+  html{
+    box-sizing: border-box;
+    font-size: 10px;
+  }
+  *, *:before, *:after{
+    box-sizing: border-box;
+  }
+  body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    line-height: 2;
+  }
+  a{
+    color: ${theme.black};
+    text-decoration: none;
+  }
+`
+
 export default class Page extends Component {
   render() {
     return (
@@ -32,6 +54,7 @@ export default class Page extends Component {
           <Meta />
           <Header />
           <Inner>{this.props.children}</Inner>
+          <GlobalStyle/>
         </StyledPage>
       </ThemeProvider>
     )
