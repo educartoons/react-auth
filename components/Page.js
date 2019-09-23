@@ -25,7 +25,7 @@ const Inner = styled.div`
 `;
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap');
   html{
     box-sizing: border-box;
     font-size: 10px;
