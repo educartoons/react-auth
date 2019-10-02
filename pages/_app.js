@@ -5,12 +5,12 @@ import withData from '../lib/withData';
 
 class MyApp extends App{
 
-  static async getInitialProps({Component, context}){
+  static async getInitialProps({Component, ctx}){
     let pageProps = {};
     if(Component.getInitialProps){
-      pageProps = await Component.getInitialProps(context);
+      pageProps = await Component.getInitialProps(ctx);
     }
-    pageProps.query = context.query;
+    pageProps.query = ctx.query;
     return {pageProps};
   }
 
