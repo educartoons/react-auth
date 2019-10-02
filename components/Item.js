@@ -6,6 +6,7 @@ import PriceTag from '../components/styles/PriceTag';
 import Link from 'next/link';
 import formatMoney from '../lib/formatMoney';
 
+
 class Item extends Component {
   static propTypes ={
     item: PropTypes.object.isRequired

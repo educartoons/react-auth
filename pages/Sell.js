@@ -1,9 +1,10 @@
 import React from 'react'
+import CreateItem from '../components/CreateItem';
 
 const Sell = () =>{
   return(
     <div>
-      <h2>Sail View</h2>
+      <CreateItem />
     </div>
   )
 }
