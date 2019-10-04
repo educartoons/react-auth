@@ -12,14 +12,14 @@ const CREATE_ITEM_MUTATION = gql`
     $description: String!
     $price: Int!
     $image: String
-    $largeimage: String
+    $largeImage: String
   ) {
     createItem(
       title: $title
       description: $description
       price: $price
       image: $image
-      largeImage: $largeimage
+      largeImage: $largeImage
     ) {
       id
     }
@@ -60,6 +60,7 @@ class CreateItem extends Component {
       image: file.secure_url,
       largeImage: file.eager[0].secure_url
     });
+    console.log(file.secure_url, file.eager[0].secure_url);
   };
   render() {
     return (
