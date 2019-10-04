@@ -1,13 +1,13 @@
-import React from 'react';
-import Items from '../components/Items';
+import React from "react";
+import Items from "../components/Items";
 
-class Home extends React.Component{
-  render(){
+class Home extends React.Component {
+  render() {
     return (
       <div>
-        <Items />
+        <Items page={parseFloat(this.props.query.page) || 1} />
       </div>
-    )
+    );
   }
 }
 
