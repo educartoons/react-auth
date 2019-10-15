@@ -11,9 +11,9 @@ const Columns = styled.div`
 const SignUp = () => {
   return (
     <Columns>
-      <Signup />
-      <Signup />
-      <Signup />
+      <Signup key="1" />
+      <Signup key="2" />
+      <Signup key="3" />
     </Columns>
   );
 };
