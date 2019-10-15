@@ -1,12 +1,15 @@
-import React from 'react'
-import CreateItem from '../components/CreateItem';
+import React from "react";
+import CreateItem from "../components/CreateItem";
+import PleaseSiginIn from "../components/PleaseSignIn";
 
-const Sell = () =>{
-  return(
+const Sell = () => {
+  return (
     <div>
-      <CreateItem />
+      <PleaseSiginIn>
+        <CreateItem />
+      </PleaseSiginIn>
     </div>
-  )
-}
+  );
+};
 
 export default Sell;
