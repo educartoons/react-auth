@@ -5,23 +5,18 @@ import Form from "./styles/Form";
 import Error from "./ErrorMessage";
 import { CURRENT_USER_QUERY } from "./User";
 
-const SIGNUP_MUTATION = gql`
-  mutation SIGNUP_MUTATION(
-    $name: String!
-    $email: String!
-    $password: String!
-  ) {
-    signUp(name: $name, email: $email, password: $password) {
+const SIGNIN_MUTATION = gql`
+  mutation SIGNIN_MUTATION($email: String!, $password: String!) {
+    signIn(email: $email, password: $password) {
       id
-      email
       name
+      email
     }
   }
 `;
 
-class Signup extends Component {
+class Signin extends Component {
   state = {
-    name: "",
     email: "",
     password: ""
   };
@@ -33,37 +28,22 @@ class Signup extends Component {
   render() {
     return (
       <Mutation
-        mutation={SIGNUP_MUTATION}
+        mutation={SIGNIN_MUTATION}
         variables={this.state}
         refetchQueries={[{ query: CURRENT_USER_QUERY }]}
       >
-        {(signUp, { error, loading }) => {
+        {(signIn, { error, loading }) => {
           return (
             <Form
               method="post"
               onSubmit={async e => {
                 e.preventDefault();
-                await signUp();
-                this.setState({
-                  name: "",
-                  email: "",
-                  password: ""
-                });
+                await signIn();
               }}
             >
               <fieldset disabled={loading} aria-busy={loading}>
-                <h2>Sign up for an account</h2>
+                <h2>Sign in for an account</h2>
                 <Error error={error} />
-                <label htmlFor="name">
-                  <input
-                    id="name"
-                    name="name"
-                    type="name"
-                    placeholder="Full name"
-                    value={this.state.name}
-                    onChange={this.saveToState}
-                  />
-                </label>
                 <label htmlFor="email">
                   <input
                     id="email"
@@ -94,4 +74,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
+export default Signin;

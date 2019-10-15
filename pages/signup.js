@@ -1,5 +1,6 @@
 import React from "react";
 import Signup from "../components/Signup";
+import Signin from "../components/Signin";
 import styled from "styled-components";
 
 const Columns = styled.div`
@@ -11,9 +12,8 @@ const Columns = styled.div`
 const SignUp = () => {
   return (
     <Columns>
-      <Signup key="1" />
-      <Signup key="2" />
-      <Signup key="3" />
+      <Signup />
+      <Signin />
     </Columns>
   );
 };
