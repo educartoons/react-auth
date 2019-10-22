@@ -15,7 +15,9 @@ class DeleteItem extends Component {
   handleDeleteItem = (e, deleteItemMutation) => {
     e.preventDefault();
     if (confirm("Are you sure?")) {
-      deleteItemMutation();
+      deleteItemMutation().catch(err => {
+        alert(err.message);
+      });
     }
   };
   update = (cache, payload) => {
